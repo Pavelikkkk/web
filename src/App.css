@@ -29,17 +29,8 @@
 }
 
 .entity-card {
-  background-color: #f0f0f0;
   padding: 20px;
-  border-radius: 10px;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.entity-card h3 {
-  margin-top: 0;
-}
-
-.entity-card p {
-  margin-bottom: 0;
-}

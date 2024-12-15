@@ -5,21 +5,18 @@ const Table = ({ entities, onDelete, onEdit }) => {
     <table>
       <thead>
         <tr>
-          <th>ID</th>
           <th>Title</th>
           <th>Description</th>
-          <th>Actions</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
         {entities.map((item, index) => (
           <tr key={item.id} className={index % 2 === 0 ? 'even' : 'odd'}>
-            <td>{item.id}</td>
-            <td>{item.name}</td>
+            <td>{item.name}</td> 
             <td>{item.description}</td>
             <td>
-              <button onClick={() => onDelete(item.id)}>Удалить</button>
-              <button onClick={() => onEdit(item.id)}>Редактировать</button>
+              <button onClick={() => onDelete(item.id)}>Delete</button>
             </td>
           </tr>
         ))}

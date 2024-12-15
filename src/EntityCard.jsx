@@ -6,7 +6,6 @@ const EntityCard = ({ entity , onDelete, onEdit}) => {
       <h3>{entity.name}</h3>
       <p>{entity.description}</p>
       <button onClick={() => onDelete(entity.id)}> Delete </button>
-      <button onClick={() => onEdit(entity.id)}> Edit </button>
 
     </div>
   );

@@ -1,32 +1,50 @@
+import React, { useEffect, useReducer, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import './Entrance/componets/App.css';
 import Table from './Entrance/componets/Table';
 import EntityList from './Entrance/componets/EntityList';
 import EntityForm from './Entrance/componets/EntityForm';
 import LoginPage from './Entrance/componets/LoginPage';
-import { login, logout } from './redux/actions/userActions';
-import { addEntity, deleteEntity,} from './redux/actions/entityActions';
+import { entitiesReducer } from './redux/reducers/entitiesReducer'; 
 
 const App = () => {
-  const dispatch = useDispatch();
-  const entities = useSelector(state => state.entities);
-  const user = useSelector(state => state.user);
+  const [entities, dispatchEntities] = useReducer(entitiesReducer, []);
+  const [user, setUser] = useState(null); 
+  
+  useEffect(() => {
+    fetch('http://127.0.0.1:5000/api/mods')
+      .then(response => response.json())
+      .then(data => dispatchEntities({ type: 'SET_ENTITIES', payload: data }))
+      .catch(error => console.error('Error fetching entities:', error));
+  }, []);
 
   const handleLogin = (userData) => {
-    dispatch(login(userData));
+    setUser(userData); 
   };
 
   const handleLogout = () => {
-    dispatch(logout());
+    setUser(null); // 
   };
 
   const handleAddEntity = (entity) => {
-    dispatch(addEntity(entity));
+    fetch('http://127.0.0.1:5000/api/mods', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(entity),
+    })
+      .then(response => response.json())
+      .then(newEntity => dispatchEntities({ type: 'ADD_ENTITY', payload: newEntity }))
+      .catch(error => console.error('Error adding entity:', error));
   };
 
   const handleDeleteEntity = (id) => {
-    dispatch(deleteEntity(id));
+    fetch(`http://127.0.0.1:5000/api/mods/${id}`, {
+      method: 'DELETE',
+    })
+      .then(() => dispatchEntities({ type: 'DELETE_ENTITY', payload: id }))
+      .catch(error => console.error('Error deleting entity:', error));
   };
 
   return (

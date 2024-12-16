@@ -1,0 +1,75 @@
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.entity-form {
+  margin-bottom: 20px;
+}
+
+.entity-form input,
+.entity-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.entity-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.entity-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.entity-card {
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table tr.even {
+  background-color: #f2f2f2;
+}
+
+table tr.odd {
+  background-color: #ffffff;
+}
+
+.login-page {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-page h2 {
+  margin-bottom: 20px;
+}
+
+.login-page input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.login-page button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-page .error {
+  color: red;
+  margin-top: 10px;
+}

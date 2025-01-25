@@ -54,3 +54,20 @@ React dynamically renders the App component (and its children) into the root ele
 
 
 ===============================================================================================================================================
+2
+===============================================================================================================================================
+
+classes
+https://chefvivica.medium.com/what-are-classes-for-in-programming-an-answer-for-beginners-48263966968
+Classes can have a constructor method, which is called when a new object is created from the class. It is used to initialize properties.
+hooks
+https://wangyeux.medium.com/what-are-react-hooks-and-how-to-use-them-e202553eacc4
+
+{posts.map((post) =>
+        <Text post={post} key={post.id}/>
+      )}
+    </div>
+keys in react provide react app to see that it component changed
+const TextList = ({posts, title}) => destructure
+const TextList = (props) => 
+

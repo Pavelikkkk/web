@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-#root{
-    display: flex;
-    justify-content: center;
-}
 
 .App{
     width: 1000px;
@@ -17,4 +13,13 @@
     display: flex;
     border: 2px solid seagreen;
     margin: 20px;
+}
+
+.contentTable{
+    width: 100%;
+    border: 1px solid black;
+}
+
+td,th{
+    border: 1px solid black;
 }

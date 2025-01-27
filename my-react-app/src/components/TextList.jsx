@@ -8,7 +8,7 @@ const TextList = ({posts, title}) =>{
 
     return(
         <div>
-            <h1 style={{textAlign: 'center'}}>{title}</h1>
+            <h1>{title}</h1>
             {posts.map((post) =>
                 <Text post={post} key={post.id}/>
             )}

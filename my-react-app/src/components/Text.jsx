@@ -5,7 +5,6 @@ const Text = (props) =>{
     return(
         <div>
             <p>{props.post.description}</p> 
-            <button>Delete</button>
         </div>
     )
 }
